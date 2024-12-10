@@ -47,7 +47,7 @@ import Cocoa
 public class LCUpdateManager: NSObject, SPUUpdaterDelegate, SPUStandardUserDriverDelegate {
     
     /// 单例
-    static let shared = LCUpdateManager()
+    public static let shared = LCUpdateManager()
     
     /// 更新控制器
     private var updateController: SPUStandardUpdaterController?
