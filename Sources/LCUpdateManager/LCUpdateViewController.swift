@@ -1,11 +1,7 @@
 //
 //  LCUpdateViewController.swift
-//  AutoSwitchInput
 //
-//  Created by Liu Chuan on 2024/12/1.
-//
-//  Copyright Ningbo Shangguan Technology Co.,Ltd. All Rights Reserved.
-//  宁波上官科技有限公司版权所有，保留一切权利。
+//  Created by DevLiuSir on 2023/3/22.
 //
 
 
