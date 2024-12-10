@@ -232,7 +232,7 @@ import Cocoa
 public class LCUpdateManager: NSObject {
     
     /// 单例对象，提供全局访问点
-    static let shared = LCUpdateManager()
+    public static let shared = LCUpdateManager()
     
     /// 获取当前地区的国家代码（小写字母）
     /// 根据设备的区域设置动态获取国家代码，用于生成与地区相关的链接
