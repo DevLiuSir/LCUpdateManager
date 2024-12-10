@@ -34,6 +34,6 @@ Pod::Spec.new do |spec|
 
   spec.source_files   = "Sources/LCUpdateManager/**/*.{h,m,swift}"
   
-  spec.resource       = 'Sources/LCUpdateManager/Resources/*'
+  spec.resource       = 'Sources/LCUpdateManager/Resources/**/*.strings'
 
 end
