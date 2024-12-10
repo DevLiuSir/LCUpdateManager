@@ -20,7 +20,7 @@ Pod::Spec.new do |spec|
 
   spec.homepage       = "https://github.com/DevLiuSir/LCUpdateManager"
   
-  spec.license        = { :type => "MIT", :file => "FILE_LICENSE" }
+  spec.license        = { :type => "MIT", :file => "LICENSE" }
   
   spec.author         = { "Marvin" => "93428739@qq.com" }
   
@@ -32,7 +32,6 @@ Pod::Spec.new do |spec|
   
   spec.source         = { :git => "https://github.com/DevLiuSir/LCUpdateManager.git", :tag => "#{spec.version}" }
 
-  spec.source_files   = "LCUpdateManager/**/*.{h,m,swift}"
-
+  spec.source_files   = "Sources/LCUpdateManager/**/*.{h,m,swift}"
 
 end
