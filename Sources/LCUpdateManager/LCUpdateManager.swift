@@ -20,19 +20,35 @@ public let kAppName: String = {
 
 
 
-/// 获取`本地化字符串`的方法，用于根据`指定的键`返回`对应的本地化内容。`
-/// - Parameter key: 本地化字符串的键值。
-/// - Returns: 对应的本地化字符串，如果找不到则返回空字符串。
+// /// 获取`本地化字符串`的方法，用于根据`指定的键`返回`对应的本地化内容。`
+// /// - Parameter key: 本地化字符串的键值。
+// /// - Returns: 对应的本地化字符串，如果找不到则返回空字符串。
+// public func LCUpdateManagerLocalizeString(_ key: String) -> String {
+//     // 定义一个静态结构体，用于存储只加载一次的静态变量
+//     struct StaticBundle {
+//         // 静态变量 bundle，表示 LCUpdateManager 所在模块的资源包
+//         static let bundle: Bundle = {
+//             return Bundle(for: LCUpdateManager.self)          // 通过 LCUpdateManager 类所在的位置定位资源包
+//         }()
+//     }
+//     // 使用资源包中的指定键获取本地化字符串
+//     return StaticBundle.bundle.localizedString(forKey: key, value: "", table: "LCUpdateManager")
+// }
+
+
 public func LCUpdateManagerLocalizeString(_ key: String) -> String {
-    // 定义一个静态结构体，用于存储只加载一次的静态变量
+    #if SWIFT_PACKAGE
+    // 如果是通过 Swift Package Manager 使用
+    return Bundle.module.localizedString(forKey: key, value: "", table: "LCUpdateManager")
+    #else
+    // 如果是通过 CocoaPods 使用
     struct StaticBundle {
-        // 静态变量 bundle，表示 LCUpdateManager 所在模块的资源包
         static let bundle: Bundle = {
-            return Bundle(for: LCUpdateManager.self)          // 通过 LCUpdateManager 类所在的位置定位资源包
+            return Bundle(for: LCUpdateManager.self)
         }()
     }
-    // 使用资源包中的指定键获取本地化字符串
     return StaticBundle.bundle.localizedString(forKey: key, value: "", table: "LCUpdateManager")
+    #endif
 }
 
 
