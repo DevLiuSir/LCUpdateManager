@@ -33,10 +33,16 @@ Pod::Spec.new do |spec|
   spec.source         = { :git => "https://github.com/DevLiuSir/LCUpdateManager.git", :tag => "#{spec.version}" }
 
   spec.source_files   = "Sources/LCUpdateManager/**/*.{h,m,swift}"
+  spec.resources      = ['Sources/LCUpdateManager/Resources/**/*.{lproj,strings}']
+  
+  
+  
+  
+  
   
   #spec.resource       = 'Sources/LCUpdateManager/Resources/**/*.strings'
-  sec.resource_bundles = {
-    'LCUpdateManager' => ['Sources/LCUpdateManager/Resources/**/*']
-  }
+  #sec.resource_bundles = {
+   # 'LCUpdateManager' => ['Sources/LCUpdateManager/Resources/**/*']
+  #}
 
 end
