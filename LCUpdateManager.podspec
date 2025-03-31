@@ -10,7 +10,7 @@ Pod::Spec.new do |spec|
 
   spec.name           = "LCUpdateManager"
   
-  spec.version        = "1.0.0"
+  spec.version        = "1.0.1"
   
   spec.summary        = "LCUpdateManager is a Cocoa framework used to detect AppStore application updates"
   
@@ -33,16 +33,7 @@ Pod::Spec.new do |spec|
   spec.source         = { :git => "https://github.com/DevLiuSir/LCUpdateManager.git", :tag => "#{spec.version}" }
 
   spec.source_files   = "Sources/LCUpdateManager/**/*.{h,m,swift}"
+  
   spec.resources      = ['Sources/LCUpdateManager/Resources/**/*.{lproj,strings}']
   
-  
-  
-  
-  
-  
-  #spec.resource       = 'Sources/LCUpdateManager/Resources/**/*.strings'
-  #sec.resource_bundles = {
-   # 'LCUpdateManager' => ['Sources/LCUpdateManager/Resources/**/*']
-  #}
-
 end
