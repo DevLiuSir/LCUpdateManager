@@ -269,9 +269,11 @@ public class LCUpdateManager: NSObject {
     private static let kAPP_Version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? ""
     
     
-    
     /// 检查新版本（Apple Store）
-    public static func checkNewVersion() {
+    /// - Parameter showAlertIfLatest:
+    ///   - `true`：如果当前已经是最新版本，弹出提示框显示“已是最新版本”。
+    ///   - `false`：如果当前已经是最新版本，不弹出任何提示框。
+    public static func checkNewVersion(showAlertIfLatest: Bool) {
         
         /// 定义一个变量，根据系统语言判断，来存储对应语言环境的请求URL
         var urlStr: String = ""
@@ -324,26 +326,12 @@ public class LCUpdateManager: NSObject {
                     // 没有更新的版本
                     print("没有更新的版本")
                     
-                    DispatchQueue.main.async {
-                        let alert = NSAlert()
-                        // 图标
-                        alert.icon = NSImage (named: NSImage.applicationIconName)
-                        
-                        // AppStore
-                        // 信息标题
-                        alert.messageText = LCUpdateManagerLocalizeString("Kind tips")
-                        alert.informativeText = LCUpdateManagerLocalizeString("Latest version")
-                        alert.addButton(withTitle: LCUpdateManagerLocalizeString("Sure"))
-                        alert.alertStyle = .warning
-                        
-                        // 帮助按钮
-                        alert.showsHelp = false
-                        
-                        // 指定警报是否包括复选框
-                        alert.showsSuppressionButton = false
-                        
-                        alert.runModal()
+                    if showAlertIfLatest {
+                        DispatchQueue.main.async {
+                            LCUpdateManager.showNoUpdateAlert()
+                        }
                     }
+                    
                 }
             } catch {
                 // JSON 解析错误
@@ -356,6 +344,27 @@ public class LCUpdateManager: NSObject {
     }
     
     
+    /// 显示`“已是最新版本”`的提示
+    private static func showNoUpdateAlert() {
+        let alert = NSAlert()
+        // 图标
+        alert.icon = NSImage (named: NSImage.applicationIconName)
+        
+        // AppStore
+        // 信息标题
+        alert.messageText = LCUpdateManagerLocalizeString("Kind tips")
+        alert.informativeText = LCUpdateManagerLocalizeString("Latest version")
+        alert.addButton(withTitle: LCUpdateManagerLocalizeString("Sure"))
+        alert.alertStyle = .warning
+        
+        // 帮助按钮
+        alert.showsHelp = false
+        
+        // 指定警报是否包括复选框
+        alert.showsSuppressionButton = false
+        
+        alert.runModal()
+    }
     
     
     /// 判断`应用过期时间`
