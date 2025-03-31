@@ -19,7 +19,17 @@ let package = Package(
         .target(
             name: "LCUpdateManager",
             resources: [
-                .process("Resources") // 添加资源路径
+                .process("Sources/LCUpdateManager/Resources/de.lproj/LCUpdateManager.strings"),
+                .process("Sources/LCUpdateManager/Resources/en.lproj/LCUpdateManager.strings"),
+                .process("Sources/LCUpdateManager/Resources/es.lproj/LCUpdateManager.strings"),
+                .process("Sources/LCUpdateManager/Resources/fr.lproj/LCUpdateManager.strings"),
+                .process("Sources/LCUpdateManager/Resources/it.lproj/LCUpdateManager.strings"),
+                .process("Sources/LCUpdateManager/Resources/ja.lproj/LCUpdateManager.strings"),
+                .process("Sources/LCUpdateManager/Resources/ko.lproj/LCUpdateManager.strings"),
+                .process("Sources/LCUpdateManager/Resources/pt-PT.lproj/LCUpdateManager.strings"),
+                .process("Sources/LCUpdateManager/Resources/ru.lproj/LCUpdateManager.strings"),
+                .process("Sources/LCUpdateManager/Resources/zh-HK.lproj/LCUpdateManager.strings"),
+                .process("Sources/LCUpdateManager/Resources/zh-Hans.lproj/LCUpdateManager.strings")
             ]),
         .testTarget(
             name: "LCUpdateManagerTests",
