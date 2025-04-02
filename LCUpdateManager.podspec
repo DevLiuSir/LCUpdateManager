@@ -10,7 +10,7 @@ Pod::Spec.new do |spec|
 
   spec.name           = "LCUpdateManager"
   
-  spec.version        = "1.0.1"
+  spec.version        = "1.0.2"
   
   spec.summary        = "LCUpdateManager is a Cocoa framework used to detect AppStore application updates"
   
