@@ -25,12 +25,7 @@ public func LCUpdateManagerLocalizeString(_ key: String) -> String {
     return Bundle.module.localizedString(forKey: key, value: "", table: "LCUpdateManager")
     #else
     // 如果是通过 CocoaPods 使用
-    struct StaticBundle {
-        static let bundle: Bundle = {
-            return Bundle(for: LCUpdateManager.self)
-        }()
-    }
-    return StaticBundle.bundle.localizedString(forKey: key, value: "", table: "LCUpdateManager")
+    return Bundle(for: LCUpdateManager.self).localizedString(forKey: key, value: "", table: "LCUpdateManager")
     #endif
 }
 
